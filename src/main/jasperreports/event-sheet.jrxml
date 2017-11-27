@@ -3,9 +3,36 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#A9A9A9">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="event sheet competitor" whenResourceMissingType="Empty" uuid="ede84022-6a74-400e-99b4-8a67b401e2ea">
+		<field name="startnumber" class="java.lang.Integer"/>
+		<field name="prename" class="java.lang.String"/>
+		<field name="surname" class="java.lang.String"/>
+		<field name="distance" class="java.lang.String"/>
+	</subDataset>
 	<parameter name="sport" class="java.lang.String"/>
 	<parameter name="gender" class="java.lang.String"/>
 	<parameter name="clazz" class="java.lang.String"/>
+	<parameter name="competitors" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -60,7 +87,61 @@
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="125" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="0" y="0" width="555" height="125" uuid="c00c7559-b556-44fd-b7e7-4eda6a4cc4c3"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="event sheet" uuid="56a417ac-8477-4535-a245-b48625f8e026">
+						<dataSourceExpression><![CDATA[$P{competitors}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="483d0b67-1972-4aae-a88a-5479dda1c2aa">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="cfe53f5f-ad57-40b7-a002-2615e0ee2ae3"/>
+								<text><![CDATA[Startnr.]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="30" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="90" uuid="a65e3ba3-7b9c-464e-ba8e-dd96f7de1e3e">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="338f8149-5294-4c03-a502-9c928dfc0df1"/>
+								<text><![CDATA[Name]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="30" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="90" uuid="e2f429c9-477a-4234-b6e0-81636e9a0bf4">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="23c16b54-e7ab-4f2d-81c8-d456a295d68f"/>
+								<text><![CDATA[Vorname]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="30" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="90" uuid="e9381865-211e-43cf-8a1a-40acf8d2b080">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="ba755c66-dacf-4359-912f-be8c33b9ae5c"/>
+								<text><![CDATA[Distance]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="30" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="90" uuid="2fafd964-e398-4f28-ba19-0fa47ace3b47">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="f5d81181-95a3-4995-9941-05ed04ed8076"/>
+								<text><![CDATA[Leistung]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell height="30" rowSpan="1"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
 	</detail>
 	<pageFooter>
 		<band height="54" splitType="Stretch">
