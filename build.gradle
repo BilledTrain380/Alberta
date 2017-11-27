@@ -39,11 +39,14 @@ repositories {
     maven {
         url "https://jaspersoft.artifactoryonline.com/jaspersoft/jr-ce-releases/"
     }
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 
+    compile "com.github.BilledTrain380:PRA:v1.0.0.beta"
+    
     compile('com.guigarage:flatter:0.7')
     compile('com.lowagie:itext:2.1.7')
     compile('org.olap4j:olap4j:1.2.0')
