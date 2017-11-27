@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="event-sheet" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="26596f82-e329-4f80-8d6d-d3908ddf14fe">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="sport" class="java.lang.String"/>
+	<parameter name="gender" class="java.lang.String"/>
+	<parameter name="clazz" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="108" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="88" width="271" height="20" uuid="c71df668-45ce-4c82-8353-8651bc5ce030"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Organisation: KTV und Primarschule Altendorf]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="414" y="0" width="141" height="20" uuid="9a13bb22-78ba-4653-ae7f-60b9ba548c59"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="26" width="140" height="20" uuid="0d3ee09d-6ead-4fcc-9e55-dc18108fb320"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{clazz}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="0" y="0" width="271" height="79" uuid="842f1156-772a-4a04-a65b-5042558ba6f2"/>
+				<imageExpression><![CDATA["src/main/jasperreports/gemeinde-altendorf.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="13" width="130" height="20" uuid="552f0bcb-7cbe-4aa0-a60c-30c479e01c54"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Wettkampfblatt]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="281" y="13" width="274" height="20" uuid="3c0a499b-23a2-4d7d-b01c-6a7f99cce473"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{sport}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="39" width="555" height="1" uuid="83b86d2c-2660-4da7-ace4-3e9d6f4952ec"/>
+			</line>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="34" width="555" height="20" uuid="fab3b3d5-d1f5-4048-ab7e-15336298d0e1"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Bestleistung mit Leuchtstift markieren und Wettkampfblatt sofort zum Speakerpult bringen.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="30" width="555" height="1" uuid="72296355-ff00-40c8-878c-d23d9ec9cf49"/>
+			</line>
+		</band>
+	</pageFooter>
+</jasperReport>
