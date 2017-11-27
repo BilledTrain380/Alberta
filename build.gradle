@@ -1,28 +1,60 @@
-group 'ch.schulealtendorf'
-version '1.0-SNAPSHOT'
-
 buildscript {
     ext.kotlin_version = '1.1.51'
 
     repositories {
         mavenCentral()
+        jcenter()
+        maven {
+            url 'http://jaspersoft.artifactoryonline.com/jaspersoft/third-party-ce-artifacts/'
+        }
+        maven {
+            url 'http://jasperreports.sourceforge.net/maven2'
+        }
+        maven {
+            url 'http://repository.jboss.org/maven2/'
+        }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.github.gmazelier:jasperreports-gradle-plugin:0.3.2"
     }
 }
 
+apply plugin: 'com.github.gmazelier.jasperreports'
 apply plugin: 'java'
 apply plugin: 'kotlin'
 
 sourceCompatibility = 1.8
 
+group 'ch.schulealtendorf'
+version '1.0-SNAPSHOT'
+
+jasperreports {
+    outDir = file("${project.buildDir}/resources/main")
+}
+compileJava.dependsOn compileAllReports
+
 repositories {
     mavenCentral()
+    maven {
+        url "https://jaspersoft.artifactoryonline.com/jaspersoft/jr-ce-releases/"
+    }
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+
+    compile('com.guigarage:flatter:0.7')
+    compile('com.lowagie:itext:2.1.7')
+    compile('org.olap4j:olap4j:1.2.0')
+
+    compile('net.sf.jasperreports:jasperreports-functions:6.2.2')
+
+    compile ('net.sf.jasperreports:jasperreports:6.4.3') {
+        exclude group: 'com.lowagie'
+        exclude group: 'org.olap4j'
+    }
+    
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
