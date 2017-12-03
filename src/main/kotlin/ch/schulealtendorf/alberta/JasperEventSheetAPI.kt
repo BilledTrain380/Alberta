@@ -1,8 +1,12 @@
 package ch.schulealtendorf.alberta
 
+import ch.schulealtendorf.alberta.jasper.EventSheetCompetitor
 import ch.schulealtendorf.alberta.jasper.ExportManager
+import ch.schulealtendorf.alberta.jasper.StreamReport
 import ch.schulealtendorf.pra.api.EventSheetAPI
+import ch.schulealtendorf.pra.pojo.Competitor
 import ch.schulealtendorf.pra.pojo.EventSheet
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
 import java.io.InputStream
 
 /**
@@ -15,8 +19,29 @@ class JasperEventSheetAPI: EventSheetAPI {
     
     override fun createReport(data: EventSheet?): InputStream {
         
+        if (data == null) {
+            throw IllegalArgumentException("Parameters must not be null: data=null")
+        }
         
+        val competitors: List<EventSheetCompetitor> = data.competitors.map { it with data.clazz }
         
-        throw UnsupportedOperationException("This method is not implemented yet.") //To change body of created functions use File | Settings | File Templates.
+        val parameters = hashMapOf<String, Any>(
+                "discipline" to data.discipline,
+                "gender" to if (data.isGender) "Knaben" else "Mädchen",
+                "clazz" to data.clazz,
+                "competitors" to JRBeanCollectionDataSource(competitors))
+        
+        val report = StreamReport("event-sheet.jasper", parameters)
+        return exportManager.export(report)
+    }
+    
+    private infix fun Competitor.with(clazz: String): EventSheetCompetitor {
+        return EventSheetCompetitor(
+                startnumber,
+                prename,
+                surname,
+                clazz,
+                distance
+        )
     }
 }
