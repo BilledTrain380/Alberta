@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="event-sheet" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="26596f82-e329-4f80-8d6d-d3908ddf14fe">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="event-sheet" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="26596f82-e329-4f80-8d6d-d3908ddf14fe">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -104,13 +104,23 @@
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
 						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="60" height="30" uuid="cfe53f5f-ad57-40b7-a002-2615e0ee2ae3"/>
+								<reportElement x="0" y="0" width="60" height="30" uuid="cfe53f5f-ad57-40b7-a002-2615e0ee2ae3">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<text><![CDATA[Startnr.]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="table_TD" height="30" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="60" height="30" uuid="23a0c133-f2ff-4cca-902d-24a521f4457d"/>
+								<reportElement x="0" y="0" width="60" height="30" uuid="23a0c133-f2ff-4cca-902d-24a521f4457d">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<textFieldExpression><![CDATA[$F{startnumber}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -119,13 +129,23 @@
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
 						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="120" height="30" uuid="338f8149-5294-4c03-a502-9c928dfc0df1"/>
+								<reportElement x="0" y="0" width="120" height="30" uuid="338f8149-5294-4c03-a502-9c928dfc0df1">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<text><![CDATA[Name]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="table_TD" height="30" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="120" height="30" uuid="dcf627b0-7532-4f29-8c16-e375731c3a5d"/>
+								<reportElement x="0" y="0" width="120" height="30" uuid="dcf627b0-7532-4f29-8c16-e375731c3a5d">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<textFieldExpression><![CDATA[$F{surname}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -134,13 +154,23 @@
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
 						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="140" height="30" uuid="23c16b54-e7ab-4f2d-81c8-d456a295d68f"/>
+								<reportElement x="0" y="0" width="140" height="30" uuid="23c16b54-e7ab-4f2d-81c8-d456a295d68f">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<text><![CDATA[Vorname]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="table_TD" height="30" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="140" height="30" uuid="eb4091ba-e07e-4a66-bce5-d7636da4c209"/>
+								<reportElement x="0" y="0" width="140" height="30" uuid="eb4091ba-e07e-4a66-bce5-d7636da4c209">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<textFieldExpression><![CDATA[$F{prename}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -149,7 +179,12 @@
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
 						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="50" height="30" uuid="7b589ae1-9698-4e22-b5bb-91c22d45e469"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="7b589ae1-9698-4e22-b5bb-91c22d45e469">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<text><![CDATA[Klasse]]></text>
 							</staticText>
 						</jr:tableHeader>
@@ -161,13 +196,18 @@
 								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 							</box>
 							<textField>
-								<reportElement x="0" y="0" width="50" height="30" uuid="605d3bef-ef09-4d68-9f78-89bf311c688d"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="605d3bef-ef09-4d68-9f78-89bf311c688d">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
 								<box>
 									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<textFieldExpression><![CDATA[$F{clazz}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -176,7 +216,12 @@
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
 						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="185" height="30" uuid="f5d81181-95a3-4995-9941-05ed04ed8076"/>
+								<reportElement x="0" y="0" width="185" height="30" uuid="f5d81181-95a3-4995-9941-05ed04ed8076">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<text><![CDATA[Leistung]]></text>
 							</staticText>
 						</jr:tableHeader>
@@ -187,8 +232,13 @@
 								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 							</box>
-							<textField>
-								<reportElement key="" x="0" y="0" width="185" height="30" uuid="cff4f247-2e29-4487-837d-6ad486b73e5e"/>
+							<textField isBlankWhenNull="true">
+								<reportElement key="" x="0" y="0" width="185" height="30" uuid="cff4f247-2e29-4487-837d-6ad486b73e5e">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<textFieldExpression><![CDATA[$F{distance}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -208,13 +258,23 @@
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
 						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="50" height="30" uuid="f9eafe6b-fd07-440c-a397-e76996ce962e"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="f9eafe6b-fd07-440c-a397-e76996ce962e">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<text><![CDATA[Startnr.]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="table_TD" height="50" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="50" height="50" uuid="0a7e0bea-35ed-4e12-a9b5-0396283157b2"/>
+								<reportElement x="0" y="0" width="50" height="50" uuid="0a7e0bea-35ed-4e12-a9b5-0396283157b2">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<textFieldExpression><![CDATA[$F{startnumber}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -223,13 +283,23 @@
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
 						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="110" height="30" uuid="6f80312e-2a28-4ec4-94c5-455a58893246"/>
+								<reportElement x="0" y="0" width="110" height="30" uuid="6f80312e-2a28-4ec4-94c5-455a58893246">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<text><![CDATA[Name]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="table_TD" height="50" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="110" height="50" uuid="fa618ded-16dd-4fab-96e7-fb64c400f24d"/>
+								<reportElement x="0" y="0" width="110" height="50" uuid="fa618ded-16dd-4fab-96e7-fb64c400f24d">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<textFieldExpression><![CDATA[$F{surname}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -238,13 +308,23 @@
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
 						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="100" height="30" uuid="a4b01edc-0fc3-4797-b814-b3e32be22360"/>
+								<reportElement x="0" y="0" width="100" height="30" uuid="a4b01edc-0fc3-4797-b814-b3e32be22360">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<text><![CDATA[Vorname]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell style="table_TD" height="50" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="100" height="50" uuid="7c81a24e-5131-4354-b98e-868d9e5ce254"/>
+								<reportElement x="0" y="0" width="100" height="50" uuid="7c81a24e-5131-4354-b98e-868d9e5ce254">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<textFieldExpression><![CDATA[$F{prename}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -253,19 +333,29 @@
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
 						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="40" height="30" uuid="0111eccd-4401-46e3-9865-3e394bb9fbf6"/>
+								<reportElement x="0" y="0" width="40" height="30" uuid="0111eccd-4401-46e3-9865-3e394bb9fbf6">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<text><![CDATA[Klasse]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell height="50">
 							<textField>
-								<reportElement x="0" y="0" width="40" height="50" uuid="5dce3206-ac8f-4153-832b-74b5809f2818"/>
+								<reportElement x="0" y="0" width="40" height="50" uuid="5dce3206-ac8f-4153-832b-74b5809f2818">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
 								<box>
 									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<textFieldExpression><![CDATA[$F{clazz}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -274,7 +364,12 @@
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
 						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="90" height="30" uuid="503dea54-52aa-481f-9144-ad840dafa2d7"/>
+								<reportElement x="0" y="0" width="90" height="30" uuid="503dea54-52aa-481f-9144-ad840dafa2d7">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<text><![CDATA[1. Versuch]]></text>
 							</staticText>
 						</jr:tableHeader>
@@ -285,14 +380,19 @@
 								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 							</box>
-							<textField>
-								<reportElement x="0" y="0" width="90" height="50" uuid="0f7deda3-a7af-4035-ac8c-8ebf1c78c401"/>
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="90" height="50" uuid="0f7deda3-a7af-4035-ac8c-8ebf1c78c401">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
 								<box>
 									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<textFieldExpression><![CDATA[$F{distance}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -301,7 +401,12 @@
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
 						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="80" height="30" uuid="749cf7d2-7cd8-4ba4-aa47-95d2ceaa1b11"/>
+								<reportElement x="0" y="0" width="80" height="30" uuid="749cf7d2-7cd8-4ba4-aa47-95d2ceaa1b11">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<text><![CDATA[2. Versuch]]></text>
 							</staticText>
 						</jr:tableHeader>
@@ -312,14 +417,19 @@
 								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 							</box>
-							<textField>
-								<reportElement x="0" y="0" width="80" height="50" uuid="65f25aff-b1a2-4738-92fa-6cf8a28cf70e"/>
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="80" height="50" uuid="65f25aff-b1a2-4738-92fa-6cf8a28cf70e">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
 								<box>
 									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<textFieldExpression><![CDATA[$F{distance}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
@@ -328,7 +438,12 @@
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
 						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="85" height="30" uuid="9a4b2782-92aa-46a3-b45f-3d5a5f453ce5"/>
+								<reportElement x="0" y="0" width="85" height="30" uuid="9a4b2782-92aa-46a3-b45f-3d5a5f453ce5">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<text><![CDATA[3. Versuch]]></text>
 							</staticText>
 						</jr:tableHeader>
@@ -339,14 +454,19 @@
 								<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 								<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 							</box>
-							<textField>
-								<reportElement x="0" y="0" width="85" height="50" uuid="b70a645c-9295-45c7-b13e-fee3a9d75284"/>
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="85" height="50" uuid="b70a645c-9295-45c7-b13e-fee3a9d75284">
+									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+								</reportElement>
 								<box>
 									<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
+								<textElement>
+									<paragraph leftIndent="5"/>
+								</textElement>
 								<textFieldExpression><![CDATA[$F{distance}]]></textFieldExpression>
 							</textField>
 						</jr:detailCell>
