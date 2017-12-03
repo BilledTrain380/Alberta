@@ -10,13 +10,22 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
 import java.io.InputStream
 
 /**
+ * Jasper implementation for event sheet api.
+ * 
  * @author nmaerchy
- * @version 0.0.1
+ * @version 1.0.0
  */
 class JasperEventSheetAPI: EventSheetAPI {
 
     private val exportManager = ExportManager()
-    
+
+    /**
+     * Creates the report for event sheets.
+     * 
+     * @param data the event sheet data to use
+     * 
+     * @return the created report
+     */
     override fun createReport(data: EventSheet?): InputStream {
         
         if (data == null) {
@@ -35,7 +44,14 @@ class JasperEventSheetAPI: EventSheetAPI {
         val report = StreamReport("event-sheet.jasper", parameters)
         return exportManager.export(report)
     }
-    
+
+    /**
+     * Creates a {@link EventSheetCompetitor} with the given {@code clazz}.
+     * 
+     * @param clazz the clazz to use
+     * 
+     * @return the resulting competitor
+     */
     private infix fun Competitor.with(clazz: String): EventSheetCompetitor {
         return EventSheetCompetitor(
                 startnumber,

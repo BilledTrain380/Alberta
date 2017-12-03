@@ -1,14 +1,25 @@
 package ch.schulealtendorf.alberta
 
 /**
+ * Utils class to convert specific data.
+ * 
  * @author nmaerchy
- * @version 0.0.1
+ * @version 1.0.0
  */
-
 object Utils {
-    
+
+    /**
+     * @return "Knaben" if the value is true, otherwise "Mädchen"
+     */
     fun gender(value: Boolean) = if (value) "Knaben" else "Mädchen"
-    
+
+    /**
+     * Checks if the given {@code value} is a discipline with multiple trials.
+     * 
+     * @param value the discipline to check
+     * 
+     * @return true if the discipline has multiple trials
+     */
     fun multipleTrials(value: String): Boolean {
         
         return when(value) {
