@@ -27,8 +27,9 @@ class JasperEventSheetAPI: EventSheetAPI {
         
         val parameters = hashMapOf<String, Any>(
                 "discipline" to data.discipline,
-                "gender" to if (data.isGender) "Knaben" else "Mädchen",
+                "gender" to Utils.gender(data.isGender),
                 "clazz" to data.clazz,
+                "multipleTrials" to Utils.multipleTrials(data.discipline),
                 "competitors" to JRBeanCollectionDataSource(competitors))
         
         val report = StreamReport("event-sheet.jasper", parameters)
