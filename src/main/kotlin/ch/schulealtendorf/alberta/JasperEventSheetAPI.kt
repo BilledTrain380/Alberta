@@ -34,7 +34,7 @@ class JasperEventSheetAPI: EventSheetAPI {
         
         val competitors: List<EventSheetCompetitor> = data.competitors.map { it with data.clazz }
         
-        val parameters = hashMapOf<String, Any>(
+        val parameters: Map<String, Any> = hashMapOf<String, Any>(
                 "discipline" to data.discipline,
                 "gender" to Utils.gender(data.isGender),
                 "clazz" to data.clazz,
