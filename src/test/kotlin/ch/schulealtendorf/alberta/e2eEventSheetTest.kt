@@ -10,7 +10,7 @@ import java.io.InputStream
  * @author nmaerchy
  * @version 0.0.1
  */
-class APITest {
+class EventSheetTest {
 
     @Test
     fun eventSheetApiWithDistance() {
