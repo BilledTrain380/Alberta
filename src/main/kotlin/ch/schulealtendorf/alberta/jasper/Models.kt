@@ -24,3 +24,17 @@ data class DisciplineRankingCompetitor(
         val result: Double,
         val points: Int
 )
+
+data class DisciplineGroupRankingComptitor(
+        val rank: Int,
+        val prename: String,
+        val surname: String,
+        val clazz: String,
+        val total: Int,
+        val firstResult: Double,
+        val firstPoints: Int,
+        val secondResult: Double,
+        val secondPoints: Int,
+        val thirdResult: Double,
+        val thirdPoints: Int
+)
