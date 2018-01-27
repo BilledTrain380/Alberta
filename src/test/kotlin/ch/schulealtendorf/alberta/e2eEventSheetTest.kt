@@ -1,5 +1,6 @@
 package ch.schulealtendorf.alberta
 
+import ch.schulealtendorf.alberta.eventsheet.JasperEventSheetAPI
 import ch.schulealtendorf.pra.pojo.Competitor
 import ch.schulealtendorf.pra.pojo.EventSheet
 import org.junit.Test
@@ -8,10 +9,22 @@ import java.io.InputStream
 
 /**
  * @author nmaerchy
- * @version 0.0.1
+ * @version 1.0.0
  */
 class EventSheetTest {
 
+    @Test
+    fun eventSheetApi() {
+        
+        val api = JasperEventSheetAPI()
+        
+        val data = eventSheetTestData("Ballzielwurf")
+        
+        val report = api.createReport(data)
+        
+        "event-sheet.pdf".create(report)
+    }
+    
     @Test
     fun eventSheetApiWithDistance() {
 
@@ -54,21 +67,21 @@ class EventSheetTest {
         competitor1.startnumber = 1
         competitor1.prename = "Max"
         competitor1.surname = "Muster"
-        competitor1.distance = distance
+        if (distance != null) competitor1.setDistance(distance)
 
         val competitor2 = Competitor()
         competitor2.startnumber = 2
         competitor2.prename = "Sascha"
         competitor2.surname = "Suster"
-        competitor2.distance = distance
+        if (distance != null) competitor2.setDistance(distance)
 
         val data = EventSheet()
         data.discipline = discipline
         data.clazz = "2a"
         data.isGender = false
         data.competitors = listOf(
-                competitor1,
-                competitor2
+                competitor2,
+                competitor1
         )
         
         return data

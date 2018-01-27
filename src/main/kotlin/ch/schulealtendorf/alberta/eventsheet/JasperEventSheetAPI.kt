@@ -1,6 +1,6 @@
-package ch.schulealtendorf.alberta
+package ch.schulealtendorf.alberta.eventsheet
 
-import ch.schulealtendorf.alberta.jasper.EventSheetCompetitor
+import ch.schulealtendorf.alberta.Utils
 import ch.schulealtendorf.alberta.jasper.ExportManager
 import ch.schulealtendorf.alberta.jasper.StreamReport
 import ch.schulealtendorf.pra.api.EventSheetAPI
@@ -13,7 +13,7 @@ import java.io.InputStream
  * Jasper implementation for event sheet api.
  * 
  * @author nmaerchy
- * @version 1.0.0
+ * @version 2.0.0
  */
 class JasperEventSheetAPI: EventSheetAPI {
 
@@ -32,27 +32,21 @@ class JasperEventSheetAPI: EventSheetAPI {
             throw IllegalArgumentException("Parameters must not be null: data=null")
         }
         
-        val competitors: List<EventSheetCompetitor> = data.competitors.map { it with data.clazz }
+        val competitors: List<EventSheetCompetitor> = data.competitors.map { it.map(data.clazz) }.sortedBy { it.startnumber }
         
         val parameters: Map<String, Any> = hashMapOf<String, Any>(
                 "discipline" to data.discipline,
                 "gender" to Utils.gender(data.isGender),
                 "clazz" to data.clazz,
                 "multipleTrials" to Utils.multipleTrials(data.discipline),
+                "withDistance" to competitors.hasDistance(),
                 "competitors" to JRBeanCollectionDataSource(competitors))
         
         val report = StreamReport("event-sheet.jasper", parameters)
         return exportManager.export(report)
     }
 
-    /**
-     * Creates a {@link EventSheetCompetitor} with the given {@code clazz}.
-     * 
-     * @param clazz the clazz to use
-     * 
-     * @return the resulting competitor
-     */
-    private infix fun Competitor.with(clazz: String): EventSheetCompetitor {
-        throw UnsupportedOperationException("This method is not implemented yet.")
-    }
+    private fun List<EventSheetCompetitor>.hasDistance() = this.any { it.distance.isNotEmpty() }
+    
+    private fun Competitor.map(clazz: String) = EventSheetCompetitor(startnumber, prename, surname, clazz, distance.orElse(""))
 }
