@@ -8,7 +8,7 @@ fun List<DisciplineCompetitor>.map(): List<DisciplineRankingCompetitor> {
     var rank = 1
     var previousPoints = -1
 
-    return this.sortedBy { it.points }.mapIndexed { index, it ->
+    return this.sortedBy { it.points }.reversed().mapIndexed { index, it ->
 
         if (it.points != previousPoints) {
             rank = index +1

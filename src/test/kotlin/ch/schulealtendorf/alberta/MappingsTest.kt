@@ -11,20 +11,20 @@ class MappingsTest {
     @Test
     fun disciplineCompetitorMap() {
         
-        val first = Pair(10, Result(10.03))
-        val second = Pair(15, Result(10.11))
-        val third = Pair(20, Result(11.12))
-        val fourth = Pair(25, Result(12.88))
+        val first = 25
+        val second = 20
+        val third = 15
+        val fourth = 10
         
         val data: List<DisciplineCompetitor> = getTestData(second, third, fourth, first)
         
         val result = data.map()
         
         val expected: List<DisciplineRankingCompetitor> = getExpectedData(
-                Triple(1, first.second, first.first),
-                Triple(2, second.second, second.first),
-                Triple(3, third.second, third.first),
-                Triple(4, fourth.second, fourth.first)
+                Pair(1, first),
+                Pair(2, second),
+                Pair(3, third),
+                Pair(4, fourth)
         )
         Assert.assertEquals(expected, result)
     }
@@ -32,63 +32,63 @@ class MappingsTest {
     @Test
     fun disciplineCompetitorMapWithSameResults() {
 
-        val first = Pair(10, Result(10.03))
-        val second = Pair(10, Result(10.03))
-        val third = Pair(10, Result(10.03))
-        val fourth = Pair(15, Result(12.88))
+        val first = 10
+        val second = 10
+        val third = 10
+        val fourth = 5
 
         val data: List<DisciplineCompetitor> = getTestData(second, third, fourth, first)
 
         val result = data.map()
 
         val expected: List<DisciplineRankingCompetitor> = getExpectedData(
-                Triple(1, first.second, first.first),
-                Triple(1, second.second, second.first),
-                Triple(1, third.second, third.first),
-                Triple(4, fourth.second, fourth.first)
+                Pair(1, first),
+                Pair(1, second),
+                Pair(1, third),
+                Pair(4, fourth)
         )
         Assert.assertEquals(expected, result)
     }
 }
 
-fun getTestData(first: Pair<Int, Result>, second: Pair<Int, Result>, third: Pair<Int, Result>, fourth: Pair<Int, Result>): List<DisciplineCompetitor> {
+fun getTestData(first: Int, second: Int, third: Int, fourth: Int): List<DisciplineCompetitor> {
     return listOf(
             DisciplineCompetitor().apply {
                 prename = ""
                 surname = ""
                 clazz = ""
-                points = first.first
-                result = first.second
+                points = first
+                result = Result(0)
             },
             DisciplineCompetitor().apply {
                 prename = ""
                 surname = ""
                 clazz = ""
-                points = second.first
-                result = second.second
+                points = second
+                result = Result(0)
             },
             DisciplineCompetitor().apply {
                 prename = ""
                 surname = ""
                 clazz = ""
-                points = third.first
-                result = third.second
+                points = third
+                result = Result(0)
             },
             DisciplineCompetitor().apply {
                 prename = ""
                 surname = ""
                 clazz = ""
-                points = fourth.first
-                result = fourth.second
+                points = fourth
+                result = Result(0)
             }
     )
 }
 
-fun getExpectedData(first: Triple<Int, Result, Int>, second: Triple<Int, Result, Int>, third: Triple<Int, Result, Int>, fourth: Triple<Int, Result, Int>): List<DisciplineRankingCompetitor> {
+fun getExpectedData(first: Pair<Int, Int>, second: Pair<Int, Int>, third: Pair<Int, Int>, fourth: Pair<Int, Int>): List<DisciplineRankingCompetitor> {
     return listOf(
-            DisciplineRankingCompetitor(first.first, "", "", "", first.second.toString(), first.third),
-            DisciplineRankingCompetitor(second.first, "", "", "", second.second.toString(), second.third),
-            DisciplineRankingCompetitor(third.first, "", "", "", third.second.toString(), third.third),
-            DisciplineRankingCompetitor(fourth.first, "", "", "", fourth.second.toString(), fourth.third)
+            DisciplineRankingCompetitor(first.first, "", "", "", "0", first.second),
+            DisciplineRankingCompetitor(second.first, "", "", "", "0", second.second),
+            DisciplineRankingCompetitor(third.first, "", "", "", "0", third.second),
+            DisciplineRankingCompetitor(fourth.first, "", "", "", "0", fourth.second)
     )
 }
