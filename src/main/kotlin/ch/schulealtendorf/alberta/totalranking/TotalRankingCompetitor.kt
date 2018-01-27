@@ -6,7 +6,7 @@ data class TotalRankingCompetitor(
         val surname: String,
         val clazz: String,
         val total: Int,
-        val deletedResult: String,
+        val deletedResult: Int,
         val schnelllaufResult: String,
         val schnelllaufPoints: Int,
         val ballwurfResult: String,

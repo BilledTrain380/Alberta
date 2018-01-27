@@ -6,7 +6,7 @@ import ch.schulealtendorf.pra.pojo.Result
 import org.junit.Assert
 import org.junit.Test
 
-class MappingsTest {
+class DisciplineRankingMappingTest {
     
     @Test
     fun disciplineCompetitorMap() {
