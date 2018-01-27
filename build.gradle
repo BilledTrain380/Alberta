@@ -45,7 +45,7 @@ repositories {
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 
-    compile "com.github.BilledTrain380:PRA:v1.0.0.beta"
+    compile "com.github.BilledTrain380:PRA:v1.0.0-beta2"
     
     compile('com.guigarage:flatter:0.7')
     compile('com.lowagie:itext:2.1.7')

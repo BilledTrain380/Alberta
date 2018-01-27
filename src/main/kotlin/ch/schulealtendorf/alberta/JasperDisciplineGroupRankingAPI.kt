@@ -26,8 +26,7 @@ class JasperDisciplineGroupRankingAPI: DisciplineGroupRankingAPI {
 
         val parameters: Map<String, Any> = hashMapOf(
                 "gender" to Utils.gender(data.isGender),
-                "year" to data.year,
-                "age" to data.age
+                "year" to data.year
                 //"competitors" to JRBeanCollectionDataSource(competitors)
         )
 

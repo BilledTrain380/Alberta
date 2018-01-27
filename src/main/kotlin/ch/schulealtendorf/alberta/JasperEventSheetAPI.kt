@@ -53,12 +53,6 @@ class JasperEventSheetAPI: EventSheetAPI {
      * @return the resulting competitor
      */
     private infix fun Competitor.with(clazz: String): EventSheetCompetitor {
-        return EventSheetCompetitor(
-                startnumber,
-                prename,
-                surname,
-                clazz,
-                distance
-        )
+        throw UnsupportedOperationException("This method is not implemented yet.")
     }
 }
