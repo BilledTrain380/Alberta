@@ -5,6 +5,7 @@ import ch.schulealtendorf.alberta.jasper.ExportManager
 import ch.schulealtendorf.alberta.jasper.StreamReport
 import ch.schulealtendorf.alberta.toTotalRanking
 import ch.schulealtendorf.pra.api.TotalRankingAPI
+import ch.schulealtendorf.pra.pojo.TotalCompetitor
 import ch.schulealtendorf.pra.pojo.TotalRanking
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
 import java.io.InputStream
@@ -26,15 +27,19 @@ class JasperTotalRankingAPI: TotalRankingAPI {
 
         val competitors: List<TotalRankingCompetitor> = data.competitors.toTotalRanking()
 
-        val parameters: Map<String, Any> = hashMapOf<String, Any>(
+        val parameters: Map<String, Any> = hashMapOf(
                 "age" to Year.now().value - data.year.value,
                 "gender" to Utils.gender(data.isGender),
                 "year" to data.year.value,
-                "ballzielWurfDistance" to "2",
-                "korbeinwurfDistance" to "5",
+                "ballzielWurfDistance" to data.competitors.ballielwurfDistance(),
+                "korbeinwurfDistance" to data.competitors.korbeinwurfDistance(),
                 "competitors" to JRBeanCollectionDataSource(competitors))
 
-        val report = StreamReport("event-sheet.jasper", parameters)
+        val report = StreamReport("total-ranking.jasper", parameters)
         return exportManager.export(report)
     }
+    
+    private fun List<TotalCompetitor>.ballielwurfDistance() = this.first().ballzielWurf.distance.orElse("")
+    
+    private fun List<TotalCompetitor>.korbeinwurfDistance() = this.first().korbeinwurf.distance.orElse("")
 }
