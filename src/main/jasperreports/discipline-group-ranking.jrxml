@@ -35,7 +35,7 @@
 		</field>
 		<field name="schnelllaufPoints" class="java.lang.Integer"/>
 		<field name="weitsprungResult" class="java.lang.String"/>
-		<field name="weitsprungPoints" class="java.lang.String"/>
+		<field name="weitsprungPoints" class="java.lang.Integer"/>
 		<field name="ballwurfResult" class="java.lang.String"/>
 		<field name="ballwurfPoints" class="java.lang.Integer"/>
 	</subDataset>
@@ -242,7 +242,7 @@ Punkte]]></text>
 									<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 									<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 								</box>
-								<textElement>
+								<textElement verticalAlignment="Top">
 									<paragraph leftIndent="5"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>

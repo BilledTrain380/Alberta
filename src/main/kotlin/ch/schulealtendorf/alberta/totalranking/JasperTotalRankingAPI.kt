@@ -12,8 +12,10 @@ import java.io.InputStream
 import java.time.Year
 
 /**
+ * Report api for total ranking.
+ * 
  * @author nmaerchy
- * @version 0.0.1
+ * @version 1.0.0
  */
 class JasperTotalRankingAPI: TotalRankingAPI {
 
