@@ -1,8 +1,10 @@
 package ch.schulealtendorf.alberta
 
+import ch.schulealtendorf.alberta.disciplinegroupranking.DisciplineGroupRankingCompetitor
 import ch.schulealtendorf.alberta.disciplineranking.DisciplineRankingCompetitor
 import ch.schulealtendorf.alberta.totalranking.TotalRankingCompetitor
 import ch.schulealtendorf.pra.pojo.DisciplineCompetitor
+import ch.schulealtendorf.pra.pojo.DisciplineGroupCompetitor
 import ch.schulealtendorf.pra.pojo.TotalCompetitor
 
 fun List<DisciplineCompetitor>.map(): List<DisciplineRankingCompetitor> {
@@ -73,3 +75,39 @@ data class MappedTotalCompetitor(
         val deletedResult: Int,
         val competitor: TotalCompetitor
 )
+
+fun List<DisciplineGroupCompetitor>.mapToDisciplineGroupRanking(): List<DisciplineGroupRankingCompetitor> {
+
+    var rank = 1
+    var previousPoints = -1
+    
+    return this.map { 
+        
+        val total = kotlin.collections.listOf(
+                it.schnelllauf.points, it.weitsprung.points, it.ballwurf.points
+        ).sum()
+        
+        Pair(total, it)
+    }.sortedBy { it.first }.reversed().mapIndexed { index, it ->
+
+        if (it.first != previousPoints) {
+            rank = index +1
+        }
+
+        previousPoints = it.first
+        
+        DisciplineGroupRankingCompetitor(
+                rank,
+                it.second.prename,
+                it.second.surname,
+                it.second.clazz,
+                it.first,
+                it.second.schnelllauf.result.toString(),
+                it.second.schnelllauf.points,
+                it.second.weitsprung.result.toString(),
+                it.second.weitsprung.points,
+                it.second.ballwurf.result.toString(),
+                it.second.ballwurf.points
+        )
+    }
+}
