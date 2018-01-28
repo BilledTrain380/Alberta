@@ -4,8 +4,6 @@ import ch.schulealtendorf.alberta.eventsheet.JasperEventSheetAPI
 import ch.schulealtendorf.pra.pojo.Competitor
 import ch.schulealtendorf.pra.pojo.EventSheet
 import org.junit.Test
-import java.io.File
-import java.io.InputStream
 
 /**
  * @author nmaerchy
@@ -22,7 +20,7 @@ class EventSheetTest {
         
         val report = api.createReport(data)
         
-        "event-sheet.pdf".create(report)
+        report.write("event-sheet.pdf")
     }
     
     @Test
@@ -34,7 +32,7 @@ class EventSheetTest {
 
         val report = api.createReport(data)
 
-        "event-sheet-with-distance.pdf".create(report)
+        report.write("event-sheet-with-distance.pdf")
     }
     
     @Test
@@ -46,7 +44,7 @@ class EventSheetTest {
 
         val report = api.createReport(data)
 
-        "event-sheet-multiple-trials-no-distance.pdf".create(report)
+        report.write("event-sheet-multiple-trials-no-distance.pdf")
     }
 
     @Test
@@ -58,7 +56,7 @@ class EventSheetTest {
 
         val report = api.createReport(data)
 
-        "event-sheet-multiple-trials-with-distance.pdf".create(report)
+        report.write("event-sheet-multiple-trials-with-distance.pdf")
     }
     
     private fun eventSheetTestData(discipline: String, distance: String? = null): EventSheet {
@@ -85,11 +83,5 @@ class EventSheetTest {
         )
         
         return data
-    }
-    
-    private fun String.create(stream: InputStream) {
-        val file = File("e2e/$this")
-        file.createNewFile()
-        file.writeBytes(stream.readBytes())
     }
 }

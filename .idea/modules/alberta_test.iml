@@ -36,7 +36,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="alberta_main" />
     <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre8:1.1.51" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.BilledTrain380:PRA:v1.0.0-beta2" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.BilledTrain380:PRA:4ae452815601979b7093791b60b7f96ee7bbeb1e" level="project" />
     <orderEntry type="library" name="Gradle: com.guigarage:flatter:0.7" level="project" />
     <orderEntry type="library" name="Gradle: com.lowagie:itext:2.1.7" level="project" />
     <orderEntry type="library" name="Gradle: org.olap4j:olap4j:1.2.0" level="project" />
