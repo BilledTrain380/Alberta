@@ -1,5 +1,6 @@
-package ch.schulealtendorf.alberta
+package ch.schulealtendorf.alberta.disciplinegroupranking
 
+import ch.schulealtendorf.alberta.Utils
 import ch.schulealtendorf.alberta.jasper.ExportManager
 import ch.schulealtendorf.alberta.jasper.StreamReport
 import ch.schulealtendorf.pra.api.DisciplineGroupRankingAPI
