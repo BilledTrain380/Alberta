@@ -1,6 +1,6 @@
 package ch.schulealtendorf.alberta.participantlist
 
-import ch.schulealtendorf.alberta.Utils
+import ch.schulealtendorf.alberta.genderShort
 import ch.schulealtendorf.alberta.jasper.ExportManager
 import ch.schulealtendorf.alberta.jasper.StreamReport
 import ch.schulealtendorf.pra.api.ParticipantListAPI
@@ -32,7 +32,7 @@ class JasperParticipantListAPI: ParticipantListAPI {
         }
         
         val participants: List<Participant> = data.participants.map { 
-            Participant(it.prename, it.surname, Utils.genderShort(it.isGender), it.clazz, it.teacher)
+            Participant(it.prename, it.surname, genderShort(it.isGender), it.clazz, it.teacher)
         }
         
         val parameters: Map<String, Any> = hashMapOf(

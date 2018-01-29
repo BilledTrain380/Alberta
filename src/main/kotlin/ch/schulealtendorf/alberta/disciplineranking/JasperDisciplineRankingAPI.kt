@@ -1,6 +1,6 @@
 package ch.schulealtendorf.alberta.disciplineranking
 
-import ch.schulealtendorf.alberta.Utils
+import ch.schulealtendorf.alberta.gender
 import ch.schulealtendorf.alberta.jasper.ExportManager
 import ch.schulealtendorf.alberta.jasper.StreamReport
 import ch.schulealtendorf.alberta.map
@@ -37,7 +37,7 @@ class JasperDisciplineRankingAPI: DisciplineRankingAPI {
 
         val parameters: Map<String, Any> = hashMapOf<String, Any>(
                 "discipline" to data.discipline,
-                "gender" to Utils.gender(data.isGender),
+                "gender" to gender(data.isGender),
                 "age" to Year.now().value - data.year.value,
                 "year" to data.year.value,
                 "competitors" to JRBeanCollectionDataSource(competitors))

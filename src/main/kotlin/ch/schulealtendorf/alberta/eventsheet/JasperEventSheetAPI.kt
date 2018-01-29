@@ -1,8 +1,9 @@
 package ch.schulealtendorf.alberta.eventsheet
 
-import ch.schulealtendorf.alberta.Utils
+import ch.schulealtendorf.alberta.gender
 import ch.schulealtendorf.alberta.jasper.ExportManager
 import ch.schulealtendorf.alberta.jasper.StreamReport
+import ch.schulealtendorf.alberta.multipleTrials
 import ch.schulealtendorf.pra.api.EventSheetAPI
 import ch.schulealtendorf.pra.pojo.Competitor
 import ch.schulealtendorf.pra.pojo.EventSheet
@@ -36,9 +37,9 @@ class JasperEventSheetAPI: EventSheetAPI {
         
         val parameters: Map<String, Any> = hashMapOf<String, Any>(
                 "discipline" to data.discipline,
-                "gender" to Utils.gender(data.isGender),
+                "gender" to gender(data.isGender),
                 "clazz" to data.clazz,
-                "multipleTrials" to Utils.multipleTrials(data.discipline),
+                "multipleTrials" to multipleTrials(data.discipline),
                 "withDistance" to competitors.hasDistance(),
                 "competitors" to JRBeanCollectionDataSource(competitors))
         

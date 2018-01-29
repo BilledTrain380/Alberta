@@ -1,6 +1,6 @@
 package ch.schulealtendorf.alberta.totalranking
 
-import ch.schulealtendorf.alberta.Utils
+import ch.schulealtendorf.alberta.gender
 import ch.schulealtendorf.alberta.jasper.ExportManager
 import ch.schulealtendorf.alberta.jasper.StreamReport
 import ch.schulealtendorf.alberta.toTotalRanking
@@ -31,7 +31,7 @@ class JasperTotalRankingAPI: TotalRankingAPI {
 
         val parameters: Map<String, Any> = hashMapOf(
                 "age" to Year.now().value - data.year.value,
-                "gender" to Utils.gender(data.isGender),
+                "gender" to gender(data.isGender),
                 "year" to data.year.value,
                 "ballzielWurfDistance" to data.competitors.ballielwurfDistance(),
                 "korbeinwurfDistance" to data.competitors.korbeinwurfDistance(),

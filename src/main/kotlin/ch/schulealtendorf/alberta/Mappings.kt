@@ -7,7 +7,7 @@ import ch.schulealtendorf.pra.pojo.DisciplineCompetitor
 import ch.schulealtendorf.pra.pojo.DisciplineGroupCompetitor
 import ch.schulealtendorf.pra.pojo.TotalCompetitor
 
-fun List<DisciplineCompetitor>.map(): List<DisciplineRankingCompetitor> {
+internal fun List<DisciplineCompetitor>.map(): List<DisciplineRankingCompetitor> {
 
     var rank = 1
     var previousPoints = -1
@@ -24,7 +24,7 @@ fun List<DisciplineCompetitor>.map(): List<DisciplineRankingCompetitor> {
     }
 }
 
-fun List<TotalCompetitor>.toTotalRanking(): List<TotalRankingCompetitor> {
+internal fun List<TotalCompetitor>.toTotalRanking(): List<TotalRankingCompetitor> {
 
     var rank = 1
     var previousPoints = -1
@@ -70,13 +70,13 @@ fun List<TotalCompetitor>.toTotalRanking(): List<TotalRankingCompetitor> {
     }
 }
 
-data class MappedTotalCompetitor(
+internal data class MappedTotalCompetitor(
         val total: Int,
         val deletedResult: Int,
         val competitor: TotalCompetitor
 )
 
-fun List<DisciplineGroupCompetitor>.mapToDisciplineGroupRanking(): List<DisciplineGroupRankingCompetitor> {
+internal fun List<DisciplineGroupCompetitor>.mapToDisciplineGroupRanking(): List<DisciplineGroupRankingCompetitor> {
 
     var rank = 1
     var previousPoints = -1
