@@ -62,63 +62,63 @@ class TotalRankingMappingTest {
         )
         Assert.assertEquals(expected, result)
     }
-}
 
-fun createTotalCompetitor(resuts: Results): TotalCompetitor {
-    return TotalCompetitor().apply {
-        prename = ""
-        surname = ""
-        clazz = ""
-        ballwurf = Discipline().apply {
-            result = Result(0)
-            points = resuts.ballwurf
-        }
-        ballzielWurf = Discipline().apply {
-            result = Result(0)
-            points = resuts.ballzielwurf
-            setDistance("5")
-        }
-        korbeinwurf = Discipline().apply {
-            result = Result(0)
-            points = resuts.korbeinwurf
-            setDistance("2.5")
-        }
-        schelllauf = Discipline().apply {
-            result = Result(0)
-            points = resuts.schnelllauf
-        }
-        seilspringen = Discipline().apply {
-            result = Result(0)
-            points = resuts.seilspringen
-        }
-        weitsprung = Discipline().apply {
-            result = Result(0)
-            points = resuts.weitsprung
+    private fun createTotalCompetitor(resuts: Results): TotalCompetitor {
+        return TotalCompetitor().apply {
+            prename = ""
+            surname = ""
+            clazz = ""
+            ballwurf = Discipline().apply {
+                result = Result(0)
+                points = resuts.ballwurf
+            }
+            ballzielWurf = Discipline().apply {
+                result = Result(0)
+                points = resuts.ballzielwurf
+                setDistance("5")
+            }
+            korbeinwurf = Discipline().apply {
+                result = Result(0)
+                points = resuts.korbeinwurf
+                setDistance("2.5")
+            }
+            schelllauf = Discipline().apply {
+                result = Result(0)
+                points = resuts.schnelllauf
+            }
+            seilspringen = Discipline().apply {
+                result = Result(0)
+                points = resuts.seilspringen
+            }
+            weitsprung = Discipline().apply {
+                result = Result(0)
+                points = resuts.weitsprung
+            }
         }
     }
-}
 
-fun getExpected(first: ExpectedCompetitor, second: ExpectedCompetitor, third: ExpectedCompetitor, fourth: ExpectedCompetitor): List<TotalRankingCompetitor> {
-    return listOf(
-            TotalRankingCompetitor(first.rank, "", "", "", first.totalPoints, first.deletedResult, "0", first.results.schnelllauf, "0", first.results.ballwurf, "0", first.results.ballzielwurf, "0", first.results.korbeinwurf, "0", first.results.seilspringen, "0", first.results.weitsprung),
-            TotalRankingCompetitor(second.rank, "", "", "", second.totalPoints, second.deletedResult, "0", second.results.schnelllauf, "0", second.results.ballwurf, "0", second.results.ballzielwurf, "0", second.results.korbeinwurf, "0", second.results.seilspringen, "0", second.results.weitsprung),
-            TotalRankingCompetitor(third.rank, "", "", "", third.totalPoints, third.deletedResult, "0", third.results.schnelllauf, "0", third.results.ballwurf, "0", third.results.ballzielwurf, "0", third.results.korbeinwurf, "0", third.results.seilspringen, "0", third.results.weitsprung),
-            TotalRankingCompetitor(fourth.rank, "", "", "", fourth.totalPoints, fourth.deletedResult, "0", fourth.results.schnelllauf, "0", fourth.results.ballwurf, "0", fourth.results.ballzielwurf, "0", fourth.results.korbeinwurf, "0", fourth.results.seilspringen, "0", fourth.results.weitsprung)
+    private fun getExpected(first: ExpectedCompetitor, second: ExpectedCompetitor, third: ExpectedCompetitor, fourth: ExpectedCompetitor): List<TotalRankingCompetitor> {
+        return listOf(
+                TotalRankingCompetitor(first.rank, "", "", "", first.totalPoints, first.deletedResult, "0", first.results.schnelllauf, "0", first.results.ballwurf, "0", first.results.ballzielwurf, "0", first.results.korbeinwurf, "0", first.results.seilspringen, "0", first.results.weitsprung),
+                TotalRankingCompetitor(second.rank, "", "", "", second.totalPoints, second.deletedResult, "0", second.results.schnelllauf, "0", second.results.ballwurf, "0", second.results.ballzielwurf, "0", second.results.korbeinwurf, "0", second.results.seilspringen, "0", second.results.weitsprung),
+                TotalRankingCompetitor(third.rank, "", "", "", third.totalPoints, third.deletedResult, "0", third.results.schnelllauf, "0", third.results.ballwurf, "0", third.results.ballzielwurf, "0", third.results.korbeinwurf, "0", third.results.seilspringen, "0", third.results.weitsprung),
+                TotalRankingCompetitor(fourth.rank, "", "", "", fourth.totalPoints, fourth.deletedResult, "0", fourth.results.schnelllauf, "0", fourth.results.ballwurf, "0", fourth.results.ballzielwurf, "0", fourth.results.korbeinwurf, "0", fourth.results.seilspringen, "0", fourth.results.weitsprung)
+        )
+    }
+
+    private data class Results(
+            val ballwurf: Int,
+            val ballzielwurf: Int,
+            val korbeinwurf: Int,
+            val schnelllauf: Int,
+            val seilspringen: Int,
+            val weitsprung: Int
+    )
+
+    private data class ExpectedCompetitor(
+            val rank: Int,
+            val totalPoints: Int,
+            val deletedResult: Int,
+            val results: Results
     )
 }
-
-data class Results(
-        val ballwurf: Int,
-        val ballzielwurf: Int,
-        val korbeinwurf: Int,
-        val schnelllauf: Int,
-        val seilspringen: Int,
-        val weitsprung: Int
-)
-
-data class ExpectedCompetitor(
-        val rank: Int,
-        val totalPoints: Int,
-        val deletedResult: Int,
-        val results: Results
-)

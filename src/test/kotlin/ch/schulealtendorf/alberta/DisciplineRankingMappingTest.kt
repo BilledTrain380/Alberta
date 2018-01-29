@@ -49,46 +49,46 @@ class DisciplineRankingMappingTest {
         )
         Assert.assertEquals(expected, result)
     }
-}
 
-fun getTestData(first: Int, second: Int, third: Int, fourth: Int): List<DisciplineCompetitor> {
-    return listOf(
-            DisciplineCompetitor().apply {
-                prename = ""
-                surname = ""
-                clazz = ""
-                points = first
-                result = Result(0)
-            },
-            DisciplineCompetitor().apply {
-                prename = ""
-                surname = ""
-                clazz = ""
-                points = second
-                result = Result(0)
-            },
-            DisciplineCompetitor().apply {
-                prename = ""
-                surname = ""
-                clazz = ""
-                points = third
-                result = Result(0)
-            },
-            DisciplineCompetitor().apply {
-                prename = ""
-                surname = ""
-                clazz = ""
-                points = fourth
-                result = Result(0)
-            }
-    )
-}
+    private fun getTestData(first: Int, second: Int, third: Int, fourth: Int): List<DisciplineCompetitor> {
+        return listOf(
+                DisciplineCompetitor().apply {
+                    prename = ""
+                    surname = ""
+                    clazz = ""
+                    points = first
+                    result = Result(0)
+                },
+                DisciplineCompetitor().apply {
+                    prename = ""
+                    surname = ""
+                    clazz = ""
+                    points = second
+                    result = Result(0)
+                },
+                DisciplineCompetitor().apply {
+                    prename = ""
+                    surname = ""
+                    clazz = ""
+                    points = third
+                    result = Result(0)
+                },
+                DisciplineCompetitor().apply {
+                    prename = ""
+                    surname = ""
+                    clazz = ""
+                    points = fourth
+                    result = Result(0)
+                }
+        )
+    }
 
-fun getExpectedData(first: Pair<Int, Int>, second: Pair<Int, Int>, third: Pair<Int, Int>, fourth: Pair<Int, Int>): List<DisciplineRankingCompetitor> {
-    return listOf(
-            DisciplineRankingCompetitor(first.first, "", "", "", "0", first.second),
-            DisciplineRankingCompetitor(second.first, "", "", "", "0", second.second),
-            DisciplineRankingCompetitor(third.first, "", "", "", "0", third.second),
-            DisciplineRankingCompetitor(fourth.first, "", "", "", "0", fourth.second)
-    )
+    private fun getExpectedData(first: Pair<Int, Int>, second: Pair<Int, Int>, third: Pair<Int, Int>, fourth: Pair<Int, Int>): List<DisciplineRankingCompetitor> {
+        return listOf(
+                DisciplineRankingCompetitor(first.first, "", "", "", "0", first.second),
+                DisciplineRankingCompetitor(second.first, "", "", "", "0", second.second),
+                DisciplineRankingCompetitor(third.first, "", "", "", "0", third.second),
+                DisciplineRankingCompetitor(fourth.first, "", "", "", "0", fourth.second)
+        )
+    }
 }
