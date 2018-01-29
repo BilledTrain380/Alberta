@@ -14,6 +14,11 @@ object Utils {
     fun gender(value: Boolean) = if (value) "Knaben" else "Mädchen"
 
     /**
+     * @return "m" if the value is true, otherwise "w"
+     */
+    fun genderShort(value: Boolean) = if (value) "m" else "w"
+
+    /**
      * Checks if the given {@code value} is a discipline with multiple trials.
      * 
      * @param value the discipline to check

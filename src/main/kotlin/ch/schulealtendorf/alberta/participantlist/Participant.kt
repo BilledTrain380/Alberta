@@ -1,4 +1,4 @@
-package ch.schulealtendorf.alberta.jasper
+package ch.schulealtendorf.alberta.participantlist
 
 data class Participant(
         val prename: String,

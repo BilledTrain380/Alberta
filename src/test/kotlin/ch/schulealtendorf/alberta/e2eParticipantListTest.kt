@@ -1,5 +1,6 @@
 package ch.schulealtendorf.alberta
 
+import ch.schulealtendorf.alberta.participantlist.JasperParticipantListAPI
 import ch.schulealtendorf.pra.pojo.Participant
 import ch.schulealtendorf.pra.pojo.ParticipantList
 import org.junit.Test
