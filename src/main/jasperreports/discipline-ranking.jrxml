@@ -221,7 +221,7 @@
 								<textElement>
 									<paragraph leftIndent="5"/>
 								</textElement>
-								<text><![CDATA[Result]]></text>
+								<text><![CDATA[Resultat]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:detailCell height="20">
