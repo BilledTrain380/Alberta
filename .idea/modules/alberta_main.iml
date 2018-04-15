@@ -12,8 +12,8 @@
           <option name="jvmTarget" value="1.8" />
           <option name="addCompilerBuiltIns" value="true" />
           <option name="loadBuiltInsFromDependencies" value="true" />
-          <option name="languageVersion" value="1.1" />
-          <option name="apiVersion" value="1.1" />
+          <option name="languageVersion" value="1.2" />
+          <option name="apiVersion" value="1.2" />
           <option name="pluginOptions">
             <array />
           </option>
@@ -34,15 +34,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre8:1.1.51" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.BilledTrain380:PRA:4ae452815601979b7093791b60b7f96ee7bbeb1e" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.2.30" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.BilledTrain380:PRA:d057c89c605901c55f5d9b29ff0910e58ab48c19" level="project" />
     <orderEntry type="library" name="Gradle: com.guigarage:flatter:0.7" level="project" />
     <orderEntry type="library" name="Gradle: com.lowagie:itext:2.1.7" level="project" />
     <orderEntry type="library" name="Gradle: org.olap4j:olap4j:1.2.0" level="project" />
     <orderEntry type="library" name="Gradle: net.sf.jasperreports:jasperreports-functions:6.2.2" level="project" />
     <orderEntry type="library" name="Gradle: net.sf.jasperreports:jasperreports:6.4.3" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.1.51" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jre7:1.1.51" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.2.30" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.30" level="project" />
     <orderEntry type="library" name="Gradle: bouncycastle:bcmail-jdk14:138" level="project" />
     <orderEntry type="library" name="Gradle: bouncycastle:bcprov-jdk14:138" level="project" />
     <orderEntry type="library" name="Gradle: xerces:xercesImpl:2.11.0" level="project" />
